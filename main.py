@@ -39,13 +39,8 @@ class Auto:
         cadena = ""
         
         for i in self.asientos:
-            try:
-                if (self.registro != i.registro or self.registro != self.motor.registro or i.registro != self.motor.registro):
-                    cadena = "Las piezas no son originales"
-                    
-            except AttributeError:
-                pass
-            
+            if (self.registro != i.registro or self.registro != self.motor.registro or i.registro != self.motor.registro):
+                cadena = "Las piezas no son originales"
             else:
                 cadena = "Auto original"
     
