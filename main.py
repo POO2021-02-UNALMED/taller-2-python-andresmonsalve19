@@ -36,17 +36,15 @@ class Auto:
         return numero_asientos
     
     def verificarIntegridad(self):
-        cadena = ""
+        cadena = "Auto original"
         
-        for i in self.asientos:
-            if i == None:
-                pass
+        for i in range(0, len(self.asientos)):
+            if (self.asientos[i] != None):
+                if (self.registro != self.asientos[i].registro or self.registro != self.motor.registro or self.asientos[i].registro != self.motor.registro):
+                    cadena =  "Las piezas no son originales"          
             else:
-                if (self.registro != i.registro or self.registro != self.motor.registro or i.registro != self.motor.registro):
-                    cadena = "Las piezas no son originales"
-                else:
-                    cadena = "Auto original"
-    
+                pass
+ 
         return cadena
     
 
