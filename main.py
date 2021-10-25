@@ -30,7 +30,7 @@ class Auto:
         numero_asientos = 0
         
         for i in range(0, len(self.asientos)):
-            if isinstance(asientos[i], Asiento):
+            if isinstance(self.asientos[i], Asiento):
                 numero_asientos += 1
                 
         return numero_asientos
@@ -39,8 +39,13 @@ class Auto:
         cadena = ""
         
         for i in self.asientos:
-            if (self.registro != i.registro or self.registro != self.motor.registro or i.registro != self.motor.registro):
-                cadena = "Las piezas no son originales"
+            try:
+                if (self.registro != i.registro or self.registro != self.motor.registro or i.registro != self.motor.registro):
+                    cadena = "Las piezas no son originales"
+                    
+            except AttributeError:
+                pass
+            
             else:
                 cadena = "Auto original"
     
