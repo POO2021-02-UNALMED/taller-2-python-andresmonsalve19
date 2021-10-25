@@ -39,10 +39,13 @@ class Auto:
         cadena = ""
         
         for i in self.asientos:
-            if (self.registro != i.registro or self.registro != self.motor.registro or i.registro != self.motor.registro):
-                cadena = "Las piezas no son originales"
+            if i == None:
+                pass
             else:
-                cadena = "Auto original"
+                if (self.registro != i.registro or self.registro != self.motor.registro or i.registro != self.motor.registro):
+                    cadena = "Las piezas no son originales"
+                else:
+                    cadena = "Auto original"
     
         return cadena
     
